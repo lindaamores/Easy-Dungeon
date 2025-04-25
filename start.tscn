@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://iek2qe8updj4"]
+
+[ext_resource type="Texture2D" uid="uid://blonrardiohyy" path="res://Screenshot_26.png" id="1_fvoea"]
+[ext_resource type="Script" path="res://start.gd" id="1_udvap"]
+
+[node name="start" type="Node2D"]
+script = ExtResource("1_udvap")
+
+[node name="Screenshot26" type="Sprite2D" parent="."]
+position = Vector2(500.375, 319)
+scale = Vector2(0.829404, 1.00314)
+texture = ExtResource("1_fvoea")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 372.0
+offset_top = 160.0
+offset_right = 538.0
+offset_bottom = 234.0
+theme_override_font_sizes/font_size = 57
+text = "Play"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 375.0
+offset_top = 316.0
+offset_right = 541.0
+offset_bottom = 390.0
+theme_override_font_sizes/font_size = 57
+text = "Quit"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

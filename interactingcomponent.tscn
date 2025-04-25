@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cglagdunmmmgr"]
+
+[ext_resource type="Script" path="res://interactingcomponent.gd" id="1_bnbxy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fjcbo"]
+radius = 5.14118
+
+[node name="interactingcomponent" type="Node2D"]
+script = ExtResource("1_bnbxy")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(5.44622, 5.48678)
+shape = SubResource("CircleShape2D_fjcbo")

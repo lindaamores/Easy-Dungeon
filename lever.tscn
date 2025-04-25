@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://sado088jd1ao"]
+
+[ext_resource type="Script" path="res://lever.gd" id="1_8wcft"]
+[ext_resource type="Texture2D" uid="uid://cgh4s6oodlwim" path="res://Screenshot_14.png" id="2_yebwh"]
+[ext_resource type="PackedScene" uid="uid://bvhqoov71ss57" path="res://interactable.tscn" id="3_403fr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6x4ui"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r427j"]
+size = Vector2(33.6991, 34.5024)
+
+[node name="lever" type="StaticBody2D"]
+scale = Vector2(1.83981, 1.73901)
+collision_layer = 2
+script = ExtResource("1_8wcft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.78184e-07, -0.86256)
+shape = SubResource("RectangleShape2D_6x4ui")
+
+[node name="lever2" type="Sprite2D" parent="."]
+position = Vector2(3.8743e-07, -1.15008)
+scale = Vector2(0.199296, 0.170382)
+texture = ExtResource("2_yebwh")
+
+[node name="interactable" parent="." instance=ExtResource("3_403fr")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
+shape = SubResource("RectangleShape2D_r427j")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://cajavjlyal71b"]
+
+[ext_resource type="Texture2D" uid="uid://cqt60yvtptl1d" path="res://godot2d/Texture/TX Tileset Grass.png" id="1_7u7f5"]
+
+[node name="TxTilesetGrass" type="Sprite2D"]
+position = Vector2(103, 576)
+scale = Vector2(7.11917, 4.496)
+texture = ExtResource("1_7u7f5")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 16.0131
+offset_top = -108.541
+offset_right = 83.0131
+offset_bottom = -85.541
+text = "You won"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -12.0
+offset_top = 3.0
+offset_right = 32.0
+offset_bottom = 26.0
+theme_override_font_sizes/font_size = 6
+text = "но так ли это?"

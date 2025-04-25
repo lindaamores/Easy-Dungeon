@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://ob52wp780be2"]
+
+[ext_resource type="Texture2D" uid="uid://cgh4s6oodlwim" path="res://Screenshot_14.png" id="1_x6top"]
+
+[sub_resource type="GDScript" id="GDScript_y1k5j"]
+script/source = "extends Area2D
+
+export(int) var link_code:int=0
+signal lever_turned()
+
+const TEXTURES : Dictionary={
+	'up':preload(\"res://Screenshot_12.png\")
+	'down':preload(\"res://Screenshot_14.png\")
+}
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uw7bb"]
+size = Vector2(60, 79)
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 256
+script = SubResource("GDScript_y1k5j")
+interect_name = null
+is_interectable = null
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_x6top")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_uw7bb")

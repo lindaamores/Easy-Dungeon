@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://bmcww0ieo3ib4"]
+
+[ext_resource type="Texture2D" uid="uid://21xjnhajv8l4" path="res://DampDungeons/Animations/Dungeon_ObjectsDungeon.png" id="1_8hps6"]
+[ext_resource type="PackedScene" uid="uid://bvhqoov71ss57" path="res://interactable.tscn" id="2_h7omh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbn75"]
+atlas = ExtResource("1_8hps6")
+region = Rect2(128, 96, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m50ua"]
+atlas = ExtResource("1_8hps6")
+region = Rect2(112, 96, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhu4g"]
+atlas = ExtResource("1_8hps6")
+region = Rect2(96, 96, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tk4om"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbn75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m50ua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhu4g")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcj71"]
+size = Vector2(11.9578, 14.376)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fg60a"]
+size = Vector2(49.0263, 44.3902)
+
+[node name="lever2" type="StaticBody2D"]
+scale = Vector2(1.83981, 1.73901)
+
+[node name="lever2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4.76837e-07, 0)
+scale = Vector2(1.13224, 0.979087)
+sprite_frames = SubResource("SpriteFrames_tk4om")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.4376)
+shape = SubResource("RectangleShape2D_kcj71")
+
+[node name="interactable" parent="." instance=ExtResource("2_h7omh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
+shape = SubResource("RectangleShape2D_fg60a")
